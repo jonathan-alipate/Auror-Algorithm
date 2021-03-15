@@ -1,2 +1,1 @@
-# Auror-Algorithm
-Auror Algorithm Test
+# Auror Algorithm Assesment
