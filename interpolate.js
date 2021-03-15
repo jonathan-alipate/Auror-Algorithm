@@ -13,7 +13,7 @@ function interpolate(string, dictionary) {
           if(tokenWord in dictionary){
               return dictionary[tokenWord]
           } else {
-              return tokenWord
+              return '[' + tokenWord + ']'
           }
       }
     } else {
@@ -21,8 +21,7 @@ function interpolate(string, dictionary) {
     }
   })
   //take parsed array and concatenate it back into a single sentece.
-  const interpolatedString = interpolatedArray.join(' ')
-  console.log(interpolatedString)
+  return interpolatedArray.join(' ')
 }
 
 //this function takes a single word and returns true if it is bounded by [] or [[]] and false if not.
