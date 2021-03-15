@@ -1,5 +1,6 @@
 ## Auror Algorithm Assesment
 
+**npm install** -> **npm run test** to run tests
 
 #####Pseudocode
 

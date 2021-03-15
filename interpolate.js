@@ -33,6 +33,4 @@ function checkIfToken(word) {
   }
 }
 
-interpolate("Hello [name] [[author]]", { name: "Jim" });
-
 module.exports = interpolate;
