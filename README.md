@@ -3,9 +3,7 @@
 
 #####Pseudocode
 
-Inputs: a string, and a dictionary of values.
-|
-V
+Inputs: a string, and a dictionary of values.  
 Outputs: Input string with dictionary values substituted into the [] delimited tokens.
 
 Exceptions: "[[" & "]]" to be escaped.
