@@ -8,7 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "node interpolate.js"
   },
   "repository": {
     "type": "git",
