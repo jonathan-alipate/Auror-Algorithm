@@ -1,0 +1,23 @@
+{
+  "name": "auror-algorithm",
+  "version": "1.0.0",
+  "description": "assesment",
+  "main": "interpolate.js",
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-alipate/Auror-Algorithm.git"
+  },
+  "author": "Jonathan Alipate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathan-alipate/Auror-Algorithm/issues"
+  },
+  "homepage": "https://github.com/jonathan-alipate/Auror-Algorithm#readme"
+}
