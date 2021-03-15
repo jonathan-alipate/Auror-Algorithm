@@ -6,22 +6,22 @@ function interpolate(string, dictionary) {
       //strip brackets
       const tokenWord = word.slice(1, word.length - 1);
       //if word is still bounded by brackets after being stripped, it has double brackets, if not it has single brackets.
-      if(checkIfToken(tokenWord)){
-        return tokenWord
+      if (checkIfToken(tokenWord)) {
+        return tokenWord;
       } else {
-          //check dictionary for key word, if it exists in dictionary then return it. If not, return token.
-          if(tokenWord in dictionary){
-              return dictionary[tokenWord]
-          } else {
-              return '[' + tokenWord + ']'
-          }
+        //check dictionary for key word, if it exists in dictionary then return it. If not, return token.
+        if (tokenWord in dictionary) {
+          return dictionary[tokenWord];
+        } else {
+          return "[" + tokenWord + "]";
+        }
       }
     } else {
-      return word
+      return word;
     }
-  })
-  //take parsed array and concatenate it back into a single sentece.
-  return interpolatedArray.join(' ')
+  });
+  //take parsed array and concatenate it back into a single sentence.
+  return interpolatedArray.join(" ");
 }
 
 //this function takes a single word and returns true if it is bounded by [] or [[]] and false if not.
