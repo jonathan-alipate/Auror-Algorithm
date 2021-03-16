@@ -8,6 +8,7 @@ function interpolate(string, dictionary) {
     const sanitize = word.match(regex);
     const sanitizedWord = sanitize ? sanitize[0] : word;
 
+    //if checkIfToken is true, go and replace the word, else skip.
     if (checkIfToken(sanitizedWord)) {
       //strip brackets
       const tokenWord = sanitizedWord.slice(1, sanitizedWord.length - 1);
