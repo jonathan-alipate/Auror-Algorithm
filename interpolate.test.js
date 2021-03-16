@@ -10,9 +10,9 @@ test("don't replace a value when the brackets are escaped", () => {
   );
 });
 
-test("replace multiple types of token data", () => {
+test("replace multiple types of token data, with fullstops and commas", () => {
   expect(
-    interpolate("Hello [name] the date is [date] your height is [height]", {
+    interpolate("Hello [name], the date is [date], your height is [height].", {
       name: "Jim",
       date: "16/03/2021",
       height: "180cm",

@@ -2,9 +2,14 @@ function interpolate(string, dictionary) {
   const wordArray = string.split(" ");
   //loop through sentence and identify tokens
   const interpolatedArray = wordArray.map((word) => {
-    if (checkIfToken(word)) {
+    //remove other symbols from string e.g commas & fullstops using regular expression.
+    const regex = /\[(.*)\]/;
+    const sanitize = word.match(regex);
+    const sanitizedWord = sanitize ? sanitize[0] : word;
+
+    if (checkIfToken(sanitizedWord)) {
       //strip brackets
-      const tokenWord = word.slice(1, word.length - 1);
+      const tokenWord = sanitizedWord.slice(1, sanitizedWord.length - 1);
       //if word is still bounded by brackets after being stripped, it has double brackets, if not it has single brackets.
       if (checkIfToken(tokenWord)) {
         return tokenWord;
