@@ -17,7 +17,7 @@ test("replace multiple types of token data, with fullstops and commas", () => {
       date: "16/03/2021",
       height: "180cm",
     })
-  ).toBe("Hello Jim the date is 16/03/2021 your height is 180cm");
+  ).toBe("Hello Jim, the date is 16/03/2021, your height is 180cm.");
 });
 
 test("returns original token if token does not exist in dicitonary", () => {
