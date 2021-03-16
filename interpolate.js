@@ -1,10 +1,8 @@
 function interpolate(string, dictionary) {
-  
   //break sentence into an array
   const wordArray = string.split(" ");
   //loop through sentence and identify tokens
-  const interpolatedArray = wordArray.map((word) => {
-
+  wordArray.forEach((word) => {
     //remove other symbols from string e.g commas & fullstops using regular expression.
     const regex = /\[(.*)\]/;
     const sanitize = word.match(regex);
@@ -22,16 +20,12 @@ function interpolate(string, dictionary) {
         if (tokenWord in dictionary) {
           //replace instance of word in sentence with dictionary word.
           string = string.replace(sanitizedWord, dictionary[tokenWord]);
-        } else {
-          return "[" + tokenWord + "]";
         }
       }
-    } else {
-      return word;
     }
   });
   //return the modified sentence
-  return string
+  return string;
 }
 
 //this function takes a single word and returns true if it is bounded by [] or [[]] and false if not.
