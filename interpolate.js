@@ -1,26 +1,27 @@
 function interpolate(string, dictionary) {
   //break sentence into an array
   const wordArray = string.split(" ");
+
   //loop through sentence and identify tokens
   wordArray.forEach((word) => {
-    //remove other symbols from string e.g commas & fullstops using regular expression.
+
+    //extract any words surrounded by []
     const regex = /\[(.*)\]/;
     const sanitize = word.match(regex);
-    const sanitizedWord = sanitize ? sanitize[0] : word;
 
-    //if checkIfToken is true, go and replace the word, else skip.
-    if (checkIfToken(sanitizedWord)) {
-      //strip brackets
-      const tokenWord = sanitizedWord.slice(1, sanitizedWord.length - 1);
+    //if regex finds a token, go and replace it, else skip.
+    if (sanitize) {
+      const token = sanitize[0]; //whole token
+      const tokenWord = sanitize[1]; //inner word
       //if word is still bounded by brackets after being stripped, it has double brackets, if not it has single brackets.
       if (checkIfToken(tokenWord)) {
         //replace instance of word in sentence with single bracketed token.
-        string = string.replace(sanitizedWord, tokenWord);
+        string = string.replace(token, tokenWord);
       } else {
         //check dictionary for key word, if it exists in dictionary then return it. If not, return token.
         if (tokenWord in dictionary) {
           //replace instance of word in sentence with dictionary word.
-          string = string.replace(sanitizedWord, dictionary[tokenWord]);
+          string = string.replace(token, dictionary[tokenWord]);
         }
       }
     }
